@@ -1,13 +1,43 @@
 // - Напишите функцию cutString(str, n), которая делит строку на подстроки, состоящие из n символов.
 // document.writeln(cutString('наслаждение',3)) // [нас,лаж,ден,ие]
 
-let cutString = (string, n) => {
-    return string.split('', n); // на цьому я погорів
-    // це завдання також -
-    // не догадуюсь як
-};
 
-console.log(cutString('наслаждение', 3));
+// let cutString = (string, n) => {
+//     let arr = [];
+//     for (let i = 0; i < string.length; i+=n) {
+//         arr.push(string.substr(i,n)); // чому інші методи тут не працюють?
+//         // substr якимось чином зберігає змінене значення
+//     }
+//     return arr
+// };
+// console.log(cutString('наслаждение', 3));
+
+
+
+
+
+
+// // let cutString = (string, n) => { // дописати пізніше
+// //     let str = string.split("");
+// //     let arr = [];
+// //
+// //     for (let i = 0; i < str.length; i++) {
+// //         let a = '';
+// //         for (let j = 0; j < n; j++) {
+// //                 a += str[0];
+// //                 str.shift();
+// //         }
+// //         arr.push(a);
+// //     }
+// //     arr.push(string.slice(-2));
+// //     return arr;
+// // };
+
+
+
+
+
+
 
 
 // - Напишіть функцію delete_characters(str, length), яка повертає підрядок, що складається із зазначеної кількості символів.
@@ -17,6 +47,10 @@ console.log(cutString('наслаждение', 3));
 
 // let delete_characters = (str,length_) => str.slice(0, length_);
 // console.log(delete_characters('Каждый охотник желает знать', 7))
+
+
+
+
 
 
 // - Напишіть функцію insert_dash(str), яка приймає рядок str як аргумент і вставляє тире (-) між словами. При цьому всі символи рядка необхідно перевести у верхній регістр.
@@ -30,7 +64,10 @@ console.log(cutString('наслаждение', 3));
 // console.log(insert_dash(str));
 
 
-//
+
+
+
+
 // - Напишіть функцію, яка приймає рядок як аргумент і перетворює регістр першого символу рядка з нижнього регістру у верхній.
 
 
@@ -39,6 +76,9 @@ console.log(cutString('наслаждение', 3));
 //     return txt.replace(txt[0], firstLetter);
 // };
 // console.log(toUppFirstLetter('wtf'));
+
+
+
 
 
 // - Дано список імен.
@@ -55,11 +95,12 @@ console.log(cutString('наслаждение', 3));
 // let n1 = 'Harry..Potter'
 // let n2 = 'Ron---Whisley'
 // let n3 = 'Hermione__Granger'
-//
-//
-//
-// let normalName = txt => { //яким чином можна визначити кількість знаків(. - _),
+
+
+//яким чином можна визначити кількість знаків(. - _),
 // щоб нормалізувати пробіли між ім'ям і прізвищем?
+//
+// let normalName = txt => {
 //     return txt.replaceAll('.', ' ').trim()
 //         .replaceAll('-',' ').trim()
 //         .replaceAll('_',' ').trim()
@@ -105,10 +146,19 @@ console.log(cutString('наслаждение', 3));
 // - Напишіть функцію capitalize(str), яка повертає рядок, у якому кожне слово починається з великої літери.
 
 
-// взагалі не зрозумів як то зробити......
-let capitalize = str => {
-
-}
+// let capitalize = str => {
+// let arr = str.split(' ');
+// let txt = '';
+//     for (let i = 0; i < arr.length; i++) {
+//        let word = arr[i].toString();
+//        let letter = word.substring(0,1).toUpperCase();
+//       let otherPart = word.substring(1,word.length);
+//        txt += letter + otherPart + ' ';
+//     }
+//    return txt.trim();
+// }
+// let a = 'hello world, world hello, hello world';
+// console.log(capitalize(a));
 
 
 // - Створити функцію-валідатор для адрес електронної пошти.
@@ -121,7 +171,30 @@ let capitalize = str => {
 // someeMAIL@i.ua
 // some.email@gmail.com
 
-// з цим завданням також -
+
+// let valideEmail = email =>{
+//     let arrEmail = email.split('@');
+//     // яким чином працює ця операція? або якщо точніше - то що означає !! (IJ автоматично виправляє на цю "тернарку")
+//     return !!(email.includes('@') && arrEmail[0] !== '' && arrEmail[1].indexOf('.') > 1);
+//
+//    // // return email.includes('@') && arrEmail[0] !== '' && arrEmail[1].indexOf('.') > 1 ? true : false
+//
+//     // if(email.includes('@')&&arrEmail[0] !== '' &&arrEmail[1].indexOf('.') > 1){
+//     //     return true
+//     // }else {
+//     //     return false
+//     // }
+// }
+//
+// console.log(valideEmail('someemail@gmail.com'));
+// console.log(valideEmail('someeMAIL@gmail.com'));
+// console.log(valideEmail('someeMAIL@i.ua'));
+// console.log(valideEmail('some.email@gmail.com'));
+// console.log(valideEmail('some@.com'));
+// console.log(valideEmail('@gmail.com'))
+
+
+
 
 
 // Примітка
@@ -206,6 +279,10 @@ let capitalize = str => {
 // }));
 
 
+
+
+
+
 // - Напишіть функцію count(str, stringsearch), яка повертає кількість символів stringsearch у рядку str.
 //     let symb = "о", str = "Астрономия это наука о небесных объектах";
 // document.writeln(count(str, symb)) // 5
@@ -226,6 +303,9 @@ let capitalize = str => {
 // console.log(count(str,symb));
 
 
+
+
+
 //
 // - Напишіть функцію cutString(str, n), яка видаляє зайві слова з рядка str, залишивши у ній n слів.
 //     let str = "Сила тяжести приложена к центру масс тела";
@@ -239,6 +319,11 @@ let capitalize = str => {
 //     return arr.splice(0,n);
 // }
 // console.log(cutstring(str,5));
+
+
+
+
+
 
 
 // -стоврити масив книжок (назва, кількість сторінок, автори , жанри).
@@ -271,6 +356,7 @@ let books = [
 ];
 
 
+
 // Яким ще чином, наступні 3 завдання, можна було зробити?? Окрім мктоду sort який я використав
 
 
@@ -279,6 +365,7 @@ let books = [
 
 // let theMorePages = books.sort((a,b) => b.pages - a.pages);
 // console.log(theMorePages[0]);
+
 
 
 // - знайти книжку/ки з найбільшою кількістю жанрів
@@ -311,4 +398,4 @@ let books = [
 
 // - вісортувати книжки по кількості сторінок по зростанню
 
-console.log(books.sort((a, b) => a.pages - b.pages));
+// console.log(books.sort((a, b) => a.pages - b.pages));
