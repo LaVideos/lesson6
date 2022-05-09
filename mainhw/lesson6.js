@@ -104,7 +104,6 @@ let js = 'javascript is cool';
 // }
 
 
-
 let cardSuitArr = ['spade', 'diamond', 'heard', 'clubs'];
 let valueArr = ['6', '7', '8', '9', '10', 'jack', 'queen', 'king', 'joker'];
 let colorArr = ['red', 'black'];
